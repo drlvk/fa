@@ -43,6 +43,26 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
 <docinfo>
     <rename element="chapter">Lecture</rename>
+
+<macros>
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\supp}{supp}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\inn}[1]{\langle#1\rangle}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Hi}{\mathcal{H}}
+\newcommand{\Ki}{\mathcal{K}}
+\newcommand{\Mi}{\mathcal{M}}
+\newcommand{\Ni}{\mathcal{N}}
+\newcommand{\D}{\partial}
+\newcommand{\ds}{\displaystyle} 
+</macros>
+
 </docinfo>
    
     <book xml:id="functional-analysis">
