@@ -75,7 +75,8 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
         <part xml:id="part-hilbert-spaces">
             <title>Hilbert Spaces</title>
-            <xi:include href="./hilbert_space_properties.xml" /> 
+            <xi:include href="./hilbert_space_properties.xml" />
+            <xi:include href="./hilbert_orthogonality1.xml" /> 
         </part>
 
         <part xml:id="part-operators-hilbert-spaces">
