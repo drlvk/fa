@@ -2,7 +2,7 @@
 
 <chapter xml:id="chapter-hilbert-space-properties" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-<title>Hilbert spaces: basic properties and examples (section 1.1)</title>
+<title>Hilbert spaces: basic properties and examples (1.1)</title>
 
 
     <introduction>
@@ -34,7 +34,14 @@ By definition the inner product <m>\inn{x,y}</m> is sesquilinear and positive.</
 
 <p> We should be more careful with the last example because here because expressions like <m>\sum_{k=1}^\infty x(k)\overline{y(k)}</m> might not converge. One way to avoid this issue it by restricting the set of functions or sequences involved. A convenient example of an inner product space is <m>c_{00}</m> is the space of sequences <m>x:\mathbb N\to\mathbb C</m> such that the support <m>\{k: x(k)\ne 0\}</m> is finite. However, this is not a Hilbert space, as we will see soon. </p>
 
-<p>A more sophisticated approach is to require <m>\sum |x(k)|^2 &lt; \infty</m>; this defines <m>\ell^2</m>, the most basic and most important infinite-dimensional Hilbert space. </p>
+<p>A more sophisticated approach is to require <m>\sum |x(k)|^2 &lt; \infty</m>; this defines <m>\ell^2</m>, the canonical example of an infinite-dimensional Hilbert space. </p>
+
+<p>More generally, given a measure space <m>\Omega</m> with a measure <m>\mu</m>, we can define the space
+<m>L^2(\Omega)</m> as the set of equivalence classes of Lebesgue measurable functions <m>f\colon \Omega\to\mathbb C</m> such that <m>|f|^2</m> is integrable (<m>\int_\Omega |f|^2\,d\mu &lt; \infty</m> is finite). 
+The unit interval with the Lebesgue measure is a standard example: <m>L^2([0, 1])</m>. 
+</p>
+
+
 </section>
 
 <section xml:id="subsection-hilbert-spaces-norm">
@@ -57,23 +64,30 @@ An inner product induces a norm by <m>\|x\|=\sqrt{\inn{x,x}}</m>. The triangle i
 <p>An example of convergent sequence in <m>\ell^2</m>. Let <m>x_n(k)=1/k</m> if <m>k\le n</m> (otherwise <m>0</m>). Then <m>\{x_n\}</m> converges   to
 the sequence <m>x(k)=1/k</m> for all <m>k</m>. Indeed, <m>\|x-x_n\|^2 = \sum_{k>n}1/k^2\to 0</m>.  </p>
 
-<p>As a consequence, <m>c_{00}</m> is not complete. (Why?) </p>
+<p>As a consequence, <m>c_{00}</m> is not complete. </p>
 
 </section>
 
 <section xml:id="subsection-hilbert-spaces-completeness">
 	<title>Proof of completeness</title>
 
-<p>Let's prove that <m>\ell^2</m> is complete. The plan is:
+<p>When proving that some metric space is complete, the following facts are useful.
 <ol>
-<li> Given a Cauchy sequence <m>\{x_n\}</m>, prove that it converges coordinate-wise to something (call it <m>x</m>), meaning <m>x_n(k)\to x(k)</m> for <m>k\in \mathbb N</m>. </li>
-<li> Prove that the coordinate-wise limit <m>x</m> is also in <m>\ell^2</m>. </li>
-<li> Prove that <m>x_n\to x</m> in the <m>\ell^2</m> norm.</li>
+<li>If a Cauchy sequence has a convergent subsequence, then it converges.</li>
+<li>Every Cauchy sequence <m>\{x_n\}</m> has a <q>geometric</q> subsequence <m>\{x_{n_k}\}</m>, meaning <m>d(x_{n_k}, x_{n_{k+1}})\le 2^{-k}</m> for all <m>k</m>.</li>
+</ol> 
+Therefore, it suffices to prove that every sequence <m>\{x_n\}</m> with the property <m>d(x_n, x_{n+1}) \le 2^{-n}</m> converges. </p>
+
+<p>Given a sequence <m>\{x_n\}</m> in <m>\ell^2</m> with <m>\|x_n - x_{n+1}\| \le 2^{-n}</m>, we:
+<ol>
+<li> Show that it converges coordinate-wise to something (call it <m>x</m>), meaning <m>x_n(k)\to x(k)</m> for <m>k\in \mathbb N</m>. </li>
+<li> Construct a dominating function (sequence) <m>z  = |x_1| + \sum_{n=1}^\infty |x_n-x_{n+1}|</m>. Here <m>z(k)</m> is finite and <m>|x_n(k)|\le |z(k)|</m> for every <m>n, k</m>. Consequently <m>|x(k)|\le |z(k)|</m>. </li>
+<li> Prove that <m>z\in \ell^2</m>: this follows from the Monotone Convergence Theorem and the fact that the <m>\ell^2</m> norm of any partial sums in the definition of <m>z</m> is bounded by <m>\|x_1\|_2 + \sum_{n=1}^\infty 2^{-n} = \|x_1\|_2 + 1</m>.</li>
+<li>Apply the Dominated Convergence Theorem: since <m>|x_n(k)-x(k)|^2 \to 0</m> for each coordinate <m>k</m>, and <m>|x_n(k)-x(k)|^2\le 4|z(k)|^2</m>, it follows that <m>\sum_k |x_n(k)-x(k)|^2 \to 0</m>. This means <m>\|x_n-x\|\to 0</m> as required.</li>
 </ol>
 </p>
 
-<p>Step 1 is easy. Step 2 can be rolled into Step 3, which is the most difficult one. It's very important to realize that knowing 1 and 2 does not imply 3. One uses the Dominated Convergence theorem, but constructing the dominating function is tricky.
-</p>
+<p>The proof of completeness of <m>L^2</m> is similar, with an extra step at the beginning: every Cauchy sequence in <m>L^2</m> is Cauchy in measure, and therefore has a subsequence converging almost everywhere (from MAT 701). We also have to pay some attention (but not much) to the fact that the elements of <m>L^2</m> are equivalence classes: in practice, one picks a representative of each equivalence class without saying this. </p> 
 
 </section>
 

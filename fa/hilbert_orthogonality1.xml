@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="chapter-hilbert-space-orthogonality-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Hilbert spaces: orthogonality (1.2) part 1</title>
+
+
+    <introduction>
+        <p>Orthogonality eventually leads to the concept of orthogonal basis, which is a powerful tool in any Hilbert space. We start with the concept of linear subspace and orthogonal decomposition. 
+        </p>
+    </introduction>
+
+<section xml:id="section-hilbert-manifold-subspace">
+<title>Linear manifolds and subspaces</title>
+
+<p>Let <m>\Hi</m> be a Hilbert space. A <term>linear manifold</term> is a subset of <m>\Hi</m> that is closed under addition and scalar multiplication. The term <term>linear subspace</term> in this book is reserved for a <em>closed</em> linear manifold. (In other books, you may see them called <q>linear subspace</q> and <q>closed linear subspace</q> instead).</p> 
+
+<p>Examples:
+<ul>
+<li> <m>c_{00}</m> is a linear manifold in <m>\ell^2</m> but not closed. </li>
+<li>The set of sequences in <m>\ell^2</m> such that <m>x(k)=0</m> for even <m>k</m> is a linear subspace. </li>
+<li>The set of continuous functions in <m>L^2([0, 1])</m> is a linear manifold, not closed. </li>
+<li>The set of functions in <m>L^2([0, 1])</m> that are zero a.e. on <m>[0, 1/2]</m> is a linear subspace. </li>
+</ul>
+</p>
+</section>
+
+
+
+<section xml:id="section-hilbert-orthogonal-decomposition">
+<title>Orthogonal decomposition</title>
+
+<p>Two vectors are orthogonal if their inner product is zero. The Pythagorean theorem applies:
+<m>\|x+y\|^2=\|x\|^2+\|y\|^2</m> when <m>x, y </m> are orthogonal.</p>
+
+<p>For a subset <m>A</m>, its <term>orthogonal complement</term> <m>A^\perp</m> is the set of vectors orthogonal to every element of <m>A</m>. Note that this is a linear subspace even if <m>A</m> is not.</p>
+
+<p>Suppose <m>\Mi</m> is a linear subspace of <m>\Hi</m>. We'd like to decompose every element <m>x\in\Hi</m> as
+ <m>x'+x''</m> with <m>x'\in \Mi</m>, <m>x''\in \Mi^\perp</m>. </p>
+
+<p>Geometric idea: let <m>x'</m> be the nearest element of <m>\Mi</m> to <m>x</m>. If such a thing exists, then we are 
+guaranteed that <m>x-x'\in \Mi^\perp</m> (take <m>u\in \Mi</m> such that <m>\inn{u,x-x''}>0</m>, and consider 
+<m>x'+tu</m>).  </p>
+
+<p>Why does such <m>x'</m> exist? You may recall about distance to compact set being attained. But we don't have
+compactness here. Completeness will have to do, but we need a Cauchy sequence. </p>
+
+<p>So, let <m>d</m> be the distance from <m>x</m> to <m>\Mi</m> and pick <m>x_n</m> such that <m>\|x-x_n\|&lt; d+1/n</m>. 
+Can <m>x_n-x_m</m> be large? This is a 2D picture, really: both <m>x_n,x_m</m> lie within a disk of radius <m>d+1/n</m>, and the chord stays at distance <m>d</m> from the center. So, the chord must be short. 
+To justify this, use the parallelogram identity <m>\|a+b\|^2 + \|a-b\|^2 = 2\|a\|^2 + 2\|b\|^2</m>.  </p>
+
+<p>So, the sequence is Cauchy, hence convergent. We get <m>x'</m> and with it <m>x''</m>, completing the proof of existence of orthogonal decomposition <m>x=x'+x''</m>. </p>
+
+<p>Note that this decomposition is unique, because if we also had <m>x=y'+y''</m> then <m>x'+x'' = y'+y''</m> implies <m>x'-y' = x''-y'' \in \Mi\cap \Mi\perp</m>.</p>
+
+<p>We can define orthogonal projection onto <m>\Mi</m> by  <m>P_{\Mi} x = x'</m>. Some claims to consider: 
+<ul> 
+	<li> <m> \|P_{\Mi}(x)-P_{\Mi}(y)\|\le \|x-y\|</m></li>
+	<li> <m>P_{\Mi}</m> is linear (formal definition will be given later)</li>
+</ul>
+</p>  
+
+<p>Bonus problem: for every fixed <m>y</m>, the function <m>f(x) = \inn{x,y}</m> is continuous on <m>\Hi</m>.</p>
+
+</section>
+
+</chapter>
