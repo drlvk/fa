@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="chapter-riesz-representation" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Riesz Representation Theorem (1.3)</title>
+
+
+    <introduction>
+        <p>There are multiple theorems with <q>Riesz Representation</q> in the name. Their common theme is providing a concrete formula for linear functionals on a vector space. The specific form depends on the vector space in question and on the assumptions placed on the linear functional.
+        </p>
+    </introduction>
+
+<section xml:id="section-linear-functionals">
+<title>Linear functionals: definition, examples, properties</title>
+ 
+<p>A <term>linear functional</term> on a vector space <m>V</m> is a function  <m>L\colon V\to \C</m> such that <m>L(\alpha x+\beta y) = \alpha L(x) + \beta L(y)</m> for all <m>x, y\in V</m> and all <m>\alpha, \beta \in \C</m>. 
+Examples:
+<ol>
+	<li>Coordinate functionals on <m>\ell^2</m>, that is <m>L_k(x) = x(k)</m> </li>
+	<li>On <m>c_{00}</m> one can define the sum <m>\Sigma(x) = \sum_k x(k)</m>, but this does not work on <m>\ell^2</m></li>
+	<li>On <m>L^2([a,b])</m>, the integral <m>I(f) = \int_a^b f(x)\,dx</m> is a linear functional.</li>
+</ol>
+</p>
+
+<p>The sum functional <m>\Sigma</m> is <em>not continuous</em> on <m>c_{00}</m>. Indeed, 
+let <m>x_n(k)=1/n</m> when <m>k\le n </m> and zero otherwise. Then <m>\sigma(x_n)=1</m> for every <m>n</m>, but <m>x_n\to 0</m> in <m>c_{00}</m>, and of course <m>\sigma(0)=0</m>. </p>
+
+<p>Using a Hamel basis on <m>\ell^2</m> one can extend the sum functional <m>\Sigma</m> to <m>\sigma\colon \ell^2\to \C</m> (not in any explicit way), thus obtaining a discontinuous linear functional on a Hilbert space. 
+There are no explicit examples of this kind.  </p>
+
+<p>The following properties of a linear functional <m>L</m> on a Hilbert space <m>\Hi</m> are equivalent: 
+<ol>
+	<li> <m>L</m> is continuous on <m>\Hi</m></li>
+	<li> <m>L</m> is continuous at <m>0</m></li>
+	<li> <m>L</m> is bounded, meaning there exists a constant <m>C</m> such that <m>|L(x)|\le C\|x\|</m> for all <m>x\in \Hi</m> </li>
+</ol>
+</p>
+
+<p>The norm of a bounded linear functional is the smallest <m>C</m> that works in the definition of boundedness: equivalently, 
+<me>
+	\|L\| = \sup_{x\ne 0} \frac{|L(x)|}{\|x\|} = \sup_{\|x\|=1} |L(x)|
+</me>
+What are the norms of coordinate functionals on <m>\ell^2</m> and the integral functional on <m>L^2([a, b])</m>?</p>
+
+<p>The <term>kernel</term> of a linear functional is <m>\ker L = L^{-1}(0) = \{x\colon L(x)=0\}</m>. This is always a linear manifold. It is a linear subspace if and only if <m>L</m> is continuous.</p> 
+
+</section>
+
+<section xml:id="section-riesz-representation">
+<title>Riesz Representation theorem</title>
+
+<p>
+<term>Riesz Representation theorem</term> (for Hilbert spaces): For each bounded linear functional <m>L</m> on a Hilbert space <m>\Hi</m> there exists a unique <m>h_0\in \Hi </m> such that <m>L(h)=\langle h, h_0\rangle</m> for all <m>h\in \Hi</m>. 
+</p>
+
+<p><em>Proof</em>. Uniqueness is easy. The case <m>L\equiv 0</m> is trivial. </p>
+
+<p>Let <m>L</m> be bounded and not identically zero. Let <m>\Mi = \ker L</m>, a proper linear subspace. Pick a nonzero vector <m>h\in\Mi^\perp</m>. Consider the functional <m>f(x)=\frac{L(h)}{\|h\|^2}\inn{x,h}</m>. It agrees with <m>L</m> on <m>\Mi</m> and at <m>h</m>. But every element of <m>\Hi</m> admits orthogonal decomposition <m>x = x' + th</m> where <m>x'\in \Mi</m> and <m>t\in \C</m>. Hence <m>L(x) = tL(h) = tf(h) = f(x)</m> for every <m>x\in \Hi</m>. </p>
+
+</section>
+
+</chapter>

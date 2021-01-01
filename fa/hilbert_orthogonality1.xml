@@ -53,14 +53,7 @@ To justify this, use the parallelogram identity <m>\|a+b\|^2 + \|a-b\|^2 = 2\|a\
 
 <p>Note that this decomposition is unique, because if we also had <m>x=y'+y''</m> then <m>x'+x'' = y'+y''</m> implies <m>x'-y' = x''-y'' \in \Mi\cap \Mi\perp</m>.</p>
 
-<p>We can define orthogonal projection onto <m>\Mi</m> by  <m>P_{\Mi} x = x'</m>. Some claims to consider: 
-<ul> 
-	<li> <m> \|P_{\Mi}(x)-P_{\Mi}(y)\|\le \|x-y\|</m></li>
-	<li> <m>P_{\Mi}</m> is linear (formal definition will be given later)</li>
-</ul>
-</p>  
-
-<p>Bonus problem: for every fixed <m>y</m>, the function <m>f(x) = \inn{x,y}</m> is continuous on <m>\Hi</m>.</p>
+<p>Thus, we can define <term>orthogonal projection</term> onto <m>\Mi</m> by  <m>P_{\Mi} x = x'</m>.</p>
 
 </section>
 

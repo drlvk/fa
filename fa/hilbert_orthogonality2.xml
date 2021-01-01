@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="chapter-hilbert-space-orthogonality-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Hilbert spaces: orthogonality (1.2) part 2</title>
+
+
+    <introduction>
+        <p>We consider more examples of orthogonal decomposition, and then apply this concept to prove that certain linear manifolds are dense. 
+        </p>
+    </introduction>
+
+<section xml:id="section-hilbert-orthogonal-projection-properties">
+<title>Properties of orthogonal projection</title>
+
+<p>
+Last time we found that for every <m>x\in Hi</m> and any linear subspace <m>\Mi</m> there is a closest element of <m>\Mi</m>, denoted <m>P_{\Mi}x</m>, and that <m>x-P_{\Mi}x \in \Mi\perp</m>. 
+Another way to describe <m>P_{\Mi}x</m> is: the unique element <m>x'\in M</m> such that <m>x - x'\in M^\perp</m>.</p>
+
+<p>Some properties of orthogonal projection:
+<ol> 
+	<li> <m>P_{\Mi}</m> is linear, meaning <m>P_{\Mi}(\alpha x+\beta y) = \alpha P_{\Mi}(x) + \beta P_{\Mi}(y)</m></li>
+	<li> <m> \|P_{\Mi}(x)-P_{\Mi}(y)\|\le \|x-y\|</m> for all <m>x, y \in \Hi</m>. </li>
+</ol>
+</p>  
+
+<p>We also have <m>P_{\Mi^\perp} = I - P_{\Mi}</m> where <m>I</m> is the identity map. </p>
+
+</section>
+
+<section xml:id="section-hilbert-orthogonal-decomposition-examples">
+<title>Examples of orthogonal decomposition and projection</title>
+
+<p>In the space <m>\Hi = \ell^2</m> let <m>\Mi</m> be the set of all sequences such that <m>x(2k)=0</m> for every <m>k</m>. What is its orthogonal complement <m>\Mi^\perp</m>? How does <m>P_{\Mi}</m> work? </p> 
+
+<p>In the space <m>\Hi = L^2([0, 1])</m> let <m>\Mi</m> be the set of all constant functions. What is <m>\Mi^\perp</m>? How does <m>P_{\Mi}</m> work? </p> 
+
+<p>In the space <m>\Hi = L^2([-\pi, \pi])</m> let <m>\Mi</m> be the set of all even functions. What is <m>\Mi^\perp</m>? How does <m>P_{\Mi}</m> work? </p> 
+</section>
+
+<section xml:id="section-hilbert-dense-manifolds">
+<title>Dense linear manifolds</title>
+
+<p>A subset <m>E\subset \Hi</m> is <term>dense</term> if its closure <m>\overline{E}</m> is all of <m>\Hi</m>. </p> 
+
+<p>Claim: for any subspace <m>E</m> we have <m>\overline{E}^\perp = E^\perp</m>. The reason is the continuity of inner product with respect to each argument. </p> 
+
+<p>If <m>A</m> is a linear manifold, then its  closure <m>\overline{A}</m> is a linear subspace. </p>
+
+<p>A typical way to prove that a linear manifold <m>A</m> of <m>\Hi</m> is dense is to show that <m>A^\perp = \{0\}</m>. Indeed, if <m>A</m> is not dense, then its closure would be a proper linear subspace, and that would have a nontrivial orthogonal complement.</p>
+
+<p>Examples: 
+<ol>
+	<li><m>c_{00}</m> is dense in <m>\ell^2</m></li>
+	<li>The space <m>S</m> of simple functions (those that attain finitely many values) is dense in <m>L^2([a, b])</m>. Idea of proof: suppose <m>f\in S^\perp \setminus \{0\}</m> and use the Lebesgue differentiation theorem to find a simple function <m>g</m> (the characteristic function <m>\chi_I</m> of some interval <m>I</m>) such that <m>\inn{f, g}\ne 0</m>.</li>
+	<li>The space of all continuous functions on <m>[a, b]</m>, denoted <m>C([a, b])</m>, is also dense in <m>L^2([a, b])</m>. Similar strategy works, with <m>\chi_I</m> replaced by a triangular bump function.</li> 
+</ol>
+</p>
+
+</section>
+</chapter>
