@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="chapter-orthonormal-sets-bases" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Orthonormal Sets and Bases (1.4)</title>
+
+
+    <introduction>
+        <p>An orthonormal basis gives us a standard way to represent elements of a Hilbert space and to compute their norm. In order to develop the properties of orthonormal bases, we have to study more general orthonormal sets first. 
+        </p>
+    </introduction>
+
+<section xml:id="section-on-sets-bessel">
+<title>Orthonormal sets and Bessel's inequality</title>
+
+<p>An <term>orthonormal set</term> in an inner product space is a set <m>\Ei</m> such that any two distinct elements of <m>\Ei</m> are orthogonal to each other and each element has unit norm. By the Pythagorean theorem, <m>\|e_1-e_2\|=\sqrt{2}</m> for any two distinct elements <m>e_1, e_2\in \Ei</m>.</p> 
+
+<p>A maximal orthonormal set is called an <term>orthonormal basis</term>. (Exists by Zorn's lemma). </p>
+
+<p>Every orthonormal set is linearly independent. Hence, in a finite-dimensional space such as <m>\C^n</m>, every orthonormal set is finite. The standard basis vectors form a countable orthonormal set in <m>\ell^2</m> (indeed, this is a orthonormal basis). In a <term>separable</term> Hilbert space (one with a countable dense subset), any orthonormal set is countable. Both <m>\ell^2</m> and <m>L^2([a, b])</m> are separable. Non-separable Hilbert spaces exist but they do not arise often, so for now we focus on countable orthonormal sets.</p>  
+
+<p>An orthonormal basis for <m>L^2([0,1])</m> takes more work. One such basis is the Fourier basis <m>\{\exp(2\pi i n t)\colon n\in \mathbb Z\}</m>. Orthonormality is easy, but the maximality is nontrivial. Use the Stone-Weierstrass theorem: if an algebra is closed under conjugation, separates elements and contains constant function, then it is dense in <m>C[0,1]</m>. Hence, the set of exponential polynomials is dense in <m>L^2([0,1])</m>.</p>
+
+<p>Suppose that <m>\{e_k\colon n\in \mathbb N\}</m> is an orthonormal set in a Hilbert space <m>\Hi</m>. <term>Bessel's inequality</term> states that
+<men xml:id="eq14-bessel">
+\sum_{k=1}^\infty \abs{\inn{h,e_k}}^2 \le \|h\|^2,\quad \forall h\in\Hi
+</men>
+Proof: consider the difference between <m>h</m> and partial sum 
+<men xml:id="eq14-projection">
+h_n = \sum_{k=1}^n \inn{h,e_k} e_k
+</men>
+Since <m>h-h_n</m> is orthogonal to  <m>e_1,\dots, e_n</m>, it is orthogonal to <m>h_n</m>. By the Pythagorean theorem
+<men xml:id="eq14-pythagorean">
+\|h\|^2=\|h-h_n\|^2+\|h_n\|^2
+</men>
+hence 
+<men xml:id="eq14-norm">
+\|h_n\|^2 = \sum_{k=1}^n |\inn{h, e_k}|^2 \le \|h\|^2
+</men>
+The conclusion follows.</p>  
+
+<p>For the future, note that <m>\|h-h_n\|</m> is the distance from <m>h</m> to the span of <m>\{e_1, \dots, e_n\}</m> because <m>h_n</m> is its projection onto this span.</p>
+
+</section>
+
+<section xml:id="section-on-bases-parseval">
+<title>Orthonormal bases and Parseval's identity</title>
+
+<p>Suppose that <m>\Ei = \{e_k\colon k\in \mathbb N\}</m> is an orthonormal set in a Hilbert space <m>\Hi</m>. The following are equivalent: 
+<ol>
+	<li><m>\Ei</m> is an orthonormal basis in <m>\Hi</m></li>
+	<li><m>\Ei^\perp = \{0\}</m></li>
+	<li>The linear span of <m>\Ei</m> is dense in <m>\Hi</m></li>
+	<li>For every <m>h\in \Hi</m> we have <m>\sum_{k=1}^\infty \inn{h,e_k} e_k = h</m></li>
+	<li><term>Parseval's identity</term> holds: <m>\sum_{k=1}^\infty |\inn{h,e_k}|^2 = \|h\|^2</m> for every <m>h\in\Hi</m></li>
+</ol>
+</p>
+
+<p>Proof. Property (2) captures the maximality of <m>\Ei</m> among orthonormal sets: there is nothing else to add. The equivalence of (2) and (3) was proved in <xref ref="section-hilbert-dense-manifolds" />. If (3) holds, then the distance from <m>h</m> to the span of <m>e_1, \dots, e_n</m> tends to zero as <m>n\to\infty</m>. Hence the vectors <m>h_n</m> in <xref ref="eq14-projection" /> satisfy <m>\|h_n-h\|\to 0</m> which implies (4). Conversely, (4) implies the linear span in dense. Finally, the equivalence of (4) and (5) is a consequence of <xref ref="eq14-pythagorean" /> and <xref ref="eq14-norm" />.
+</p>
+
+</section>
+
+
+<section xml:id="section-unconditional-convergence">
+<title>Unconditional convergence</title>
+
+<p>A series converges <term>unconditionally</term> if for every permutation of its terms the sum remains the same.
+<xref ref="section-on-bases-parseval" /> shows that <m>\sum_{k=1}^\infty \inn{h,e_k} e_k = h</m> unconditionally for any orthonormal basis <m>\{e_k\}</m>, because any permutation of terms results in an orthonormal basis. </p>
+
+<p>Absolute convergence of a series <m>\sum v_k</m> in a Hilbert space means that <m>\sum \|v_k\|</m> converges. For the series <m>h = \sum_{k=1}^\infty (1/k) e_k</m> in <m>\ell^2</m>, the convergence is unconditional but not absolute. </p>
+
+<p>More generally, unconditional convergence can be defined for a series <m>\sum_{i\in I} x_i</m> where <m>x_i\in \Hi</m> and <m>I</m> is an abstract set of indices (without any order). Its unconditional sum is <m>S</m> if for every <m>\epsilon</m> there is a finite set <m>A\subset I</m> such that <m>\left\|\sum_{i\in B}x_i - S\right\|&lt;\epsilon</m>
+for every finite set <m>B</m> containing <m>A</m>. </p>
+</section>
+
+</chapter>

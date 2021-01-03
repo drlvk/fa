@@ -25,7 +25,7 @@ Examples:
 <p>The sum functional <m>\Sigma</m> is <em>not continuous</em> on <m>c_{00}</m>. Indeed, 
 let <m>x_n(k)=1/n</m> when <m>k\le n </m> and zero otherwise. Then <m>\sigma(x_n)=1</m> for every <m>n</m>, but <m>x_n\to 0</m> in <m>c_{00}</m>, and of course <m>\sigma(0)=0</m>. </p>
 
-<p>Using a Hamel basis on <m>\ell^2</m> one can extend the sum functional <m>\Sigma</m> to <m>\sigma\colon \ell^2\to \C</m> (not in any explicit way), thus obtaining a discontinuous linear functional on a Hilbert space. 
+<p>A <term>Hamel basis</term> is a maximal linearly independent set. Every vector space has one, although in some infinite dimensional spaces, including <m>\ell^2</m>, there is no explicit form of such a basis; we infer its existence from Zorn's Lemma. Using a Hamel basis in <m>\ell^2</m>, one can extend the sum functional <m>\Sigma</m> to <m>\sigma\colon \ell^2\to \C</m> (not in any explicit way), thus obtaining a discontinuous linear functional on a Hilbert space. 
 There are no explicit examples of this kind.  </p>
 
 <p>The following properties of a linear functional <m>L</m> on a Hilbert space <m>\Hi</m> are equivalent: 
@@ -55,7 +55,7 @@ What are the norms of coordinate functionals on <m>\ell^2</m> and the integral f
 
 <p><em>Proof</em>. Uniqueness is easy. The case <m>L\equiv 0</m> is trivial. </p>
 
-<p>Let <m>L</m> be bounded and not identically zero. Let <m>\Mi = \ker L</m>, a proper linear subspace. Pick a nonzero vector <m>h\in\Mi^\perp</m>. Consider the functional <m>f(x)=\frac{L(h)}{\|h\|^2}\inn{x,h}</m>. It agrees with <m>L</m> on <m>\Mi</m> and at <m>h</m>. But every element of <m>\Hi</m> admits orthogonal decomposition <m>x = x' + th</m> where <m>x'\in \Mi</m> and <m>t\in \C</m>. Hence <m>L(x) = tL(h) = tf(h) = f(x)</m> for every <m>x\in \Hi</m>. </p>
+<p>Let <m>L</m> be bounded and not identically zero. Let <m>\Mi = \ker L</m>, a proper linear subspace. Pick a nonzero vector <m>h\in\Mi^\perp</m>. Consider the functional <m>f(x)=\dfrac{L(h)}{\|h\|^2}\inn{x,h}</m>. It agrees with <m>L</m> on <m>\Mi</m> and at <m>h</m>. But every element of <m>\Hi</m> admits orthogonal decomposition <m>x = x' + th</m> where <m>x'\in \Mi</m> and <m>t\in \C</m>. Hence <m>L(x) = tL(h) = tf(h) = f(x)</m> for every <m>x\in \Hi</m>. </p>
 
 </section>
 

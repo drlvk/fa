@@ -47,7 +47,7 @@ Another way to describe <m>P_{\Mi}x</m> is: the unique element <m>x'\in M</m> su
 
 <p>If <m>A</m> is a linear manifold, then its  closure <m>\overline{A}</m> is a linear subspace. </p>
 
-<p>A typical way to prove that a linear manifold <m>A</m> of <m>\Hi</m> is dense is to show that <m>A^\perp = \{0\}</m>. Indeed, if <m>A</m> is not dense, then its closure would be a proper linear subspace, and that would have a nontrivial orthogonal complement.</p>
+<p>A linear manifold <m>A</m> is dense in <m>\Hi</m> if and only if  <m>A^\perp = \{0\}</m>. Indeed, if <m>A^\perp</m> contains a nonzero vector <m>x</m>, then we have <m>\|x-a\|\ge \|x\|</m> for all <m>a\in A</m>, so <m>A</m> is not dense. Conversely, if <m>A</m> is not dense, then <m>\overline{A}</m> is a proper linear subspace, which has a nontrivial orthogonal complement. </p>
 
 <p>Examples: 
 <ol>
