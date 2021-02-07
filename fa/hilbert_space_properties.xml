@@ -59,9 +59,9 @@ An inner product induces a norm by <m>\|x\|=\sqrt{\inn{x,x}}</m>. The triangle i
 
 <p>Metric gives us notion of convergence (and everything else: open, closed, compact sets...) In particular, we can ask whether the inner product space is <em>complete</em> (all Cauchy sequences converge). If it is, it's a Hilbert space. Functional analysis with spaces that are not complete is like  real analysis with only rational numbers.</p>
 
-<p>Consider convergence in <m>\ell^2</m>. If <m>x_n\to x</m>, then for every  <m>k</m> <m>x_n(k)\to x(k)</m>. Not conversely. For example, let <m>x_n(k)=1/n</m> if <m>k\le n</m> and <m>0</m> otherwise. This converges pointwise to zero sequence, but not in the norm.</p> 
+<p>Consider convergence in <m>\ell^2</m>. If <m>x_n\to x</m>, then for every  <m>k</m> <m>x_n(k)\to x(k)</m>. Not conversely. For example, let <m>x_n(k)=1/\sqrt{n}</m> if <m>k\le n</m> and <m>0</m> otherwise. This converges pointwise to zero sequence, but not in the norm.</p> 
 
-<p>An example of convergent sequence in <m>\ell^2</m>. Let <m>x_n(k)=1/\sqrt{k}</m> if <m>k\le n</m> (otherwise <m>0</m>). Then <m>\{x_n\}</m> converges   to
+<p>An example of convergent sequence in <m>\ell^2</m>. Let <m>x_n(k)=1/k</m> if <m>k\le n</m> (otherwise <m>0</m>). Then <m>\{x_n\}</m> converges   to
 the sequence <m>x(k)=1/k</m> for all <m>k</m>. Indeed, <m>\|x-x_n\|^2 = \sum_{k>n}1/k^2\to 0</m>.  </p>
 
 <p>As a consequence, <m>c_{00}</m> is not complete. </p>
