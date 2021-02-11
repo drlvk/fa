@@ -13,8 +13,8 @@
 <section xml:id="section-hilbert-orthogonal-projection-properties">
 <title>Properties of orthogonal projection</title>
 
-<p>
-Last time we found that for every <m>x\in Hi</m> and any linear subspace <m>\Mi</m> there is a closest element of <m>\Mi</m>, denoted <m>P_{\Mi}x</m>, and that <m>x-P_{\Mi}x \in \Mi\perp</m>. 
+<p> As usual, <m>\Hi</m> denotes a Hilbert space.
+Last time we found that for every <m>x\in \Hi</m> and any linear subspace <m>\Mi</m> there is a closest element of <m>\Mi</m>, denoted <m>P_{\Mi}x</m>, and that <m>x-P_{\Mi}x \in \Mi^\perp</m>. 
 Another way to describe <m>P_{\Mi}x</m> is: the unique element <m>x'\in M</m> such that <m>x - x'\in M^\perp</m>.</p>
 
 <p>Some properties of orthogonal projection:
